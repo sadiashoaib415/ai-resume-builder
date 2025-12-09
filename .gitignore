@@ -76,3 +76,9 @@ dev-server.js
 *.exe
 npm.js
 nvm-setup.exe
+npm.tgz
+npm-latest.tgz
+npm-temp/
+
+# Vercel
+.vercel
