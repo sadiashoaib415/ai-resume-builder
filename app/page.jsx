@@ -16,8 +16,8 @@ export default function Home() {
           <div className="mb-8 flex justify-center">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               <Image
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=800&fit=crop"
-                alt="AI Resume Builder"
+                src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=800&fit=crop"
+                alt="Professional Resume Builder"
                 fill
                 className="rounded-full object-cover shadow-2xl"
                 priority
@@ -62,53 +62,25 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
-              <div className="relative w-20 h-20 mx-auto mb-4">
-                <Image
-                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=200&fit=crop"
-                  alt="AI-Powered Content"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
+              <div className="text-5xl mb-4">🤖</div>
               <h3 className="text-xl font-semibold mb-2">AI-Powered Content</h3>
               <p className="text-gray-600">Generate professional resume content and cover letters tailored to your experience</p>
             </div>
 
             <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
-              <div className="relative w-20 h-20 mx-auto mb-4">
-                <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=200&fit=crop"
-                  alt="Lightning Fast"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
+              <div className="text-5xl mb-4">⚡</div>
               <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
               <p className="text-gray-600">Create complete resumes in under 5 minutes with our streamlined process</p>
             </div>
 
             <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
-              <div className="relative w-20 h-20 mx-auto mb-4">
-                <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop"
-                  alt="ATS-Optimized"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
+              <div className="text-5xl mb-4">🎯</div>
               <h3 className="text-xl font-semibold mb-2">ATS-Optimized</h3>
               <p className="text-gray-600">Content designed to pass Applicant Tracking Systems and impress recruiters</p>
             </div>
 
             <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
-              <div className="relative w-20 h-20 mx-auto mb-4">
-                <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
-                  alt="Professional Templates"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
+              <div className="text-5xl mb-4">💼</div>
               <h3 className="text-xl font-semibold mb-2">Professional Templates</h3>
               <p className="text-gray-600">Clean, modern resume formats that stand out to hiring managers</p>
             </div>
