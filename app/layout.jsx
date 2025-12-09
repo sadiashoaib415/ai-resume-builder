@@ -1,3 +1,5 @@
+import './globals.css'
+
 export const metadata = {
   title: 'AI Resume Builder - Create Professional Resumes with AI',
   description: 'Build ATS-friendly resumes and cover letters instantly with AI-powered content generation. Free to use, professional results guaranteed.',
