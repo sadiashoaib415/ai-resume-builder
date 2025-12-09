@@ -1,11 +1,20 @@
-import { Hero } from '../components/Hero'
-import { Features } from '../components/Features'
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Hero />
-      <Features />
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          AI Resume Builder
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          Create professional resumes with AI assistance
+        </p>
+        <a
+          href="/builder"
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+        >
+          Get Started
+        </a>
+      </div>
     </main>
   )
 }
