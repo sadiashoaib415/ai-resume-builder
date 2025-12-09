@@ -86,54 +86,52 @@ export default function InteractiveBuilder() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              AI Resume Builder
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+      {/* Navigation */}
+      <nav className="relative z-10 px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-white hover:text-purple-300 transition-colors">
+            AI Resume Builder
+          </Link>
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="text-white/80 hover:text-white transition-colors">
+              ← Home
             </Link>
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
-                ← Home
-              </Link>
-              <Link href="/builder" className="text-gray-600 hover:text-gray-900 transition-colors">
-                Overview
-              </Link>
-            </div>
-          </nav>
+            <Link href="/builder" className="text-white/80 hover:text-white transition-colors">
+              Overview
+            </Link>
+          </div>
         </div>
-      </header>
+      </nav>
 
       {/* Main Content */}
-      <main className="px-4 py-8">
+      <main className="px-4 py-8 sm:py-12">
         <div className="max-w-3xl mx-auto">
           {/* Progress Header */}
-          <div className="mb-8">
+          <div className="glassmorphism p-8 mb-8">
             <div className="flex items-center justify-between mb-4">
-              <h1 className="text-3xl font-bold text-gray-900">Build Your Resume</h1>
-              <span className="text-sm text-gray-500">Step 1 of 1</span>
+              <h1 className="text-3xl sm:text-4xl font-bold text-white">Build Your Resume</h1>
+              <span className="text-sm text-white/60">Step 1 of 1</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
-              <div className="bg-blue-600 h-2 rounded-full w-full"></div>
+            <div className="w-full bg-white/10 rounded-full h-2 backdrop-blur-sm">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-full"></div>
             </div>
           </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 text-sm">👤</span>
+            <div className="glassmorphism p-8 sm:p-10">
+              <h2 className="text-2xl font-semibold text-white mb-6 flex items-center">
+                <span className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center mr-3 text-lg">👤</span>
                 Personal Information
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div className="md:col-span-2">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name <span className="text-red-500">*</span>
+                  <label htmlFor="name" className="block text-sm font-medium text-white/90 mb-2">
+                    Full Name <span className="text-pink-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -141,14 +139,12 @@ export default function InteractiveBuilder() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-                      errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-                    }`}
+                    className={`glass-input w-full ${errors.name ? 'border-pink-400/50 focus:ring-pink-500/50' : ''}`}
                     placeholder="Enter your full name"
                     disabled={isSubmitting}
                   />
                   {errors.name && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                    <p className="mt-2 text-sm text-pink-300 flex items-center">
                       <span className="mr-1">⚠️</span>
                       {errors.name}
                     </p>
@@ -157,8 +153,8 @@ export default function InteractiveBuilder() {
 
                 {/* Job Title */}
                 <div className="md:col-span-2">
-                  <label htmlFor="jobTitle" className="block text-sm font-medium text-gray-700 mb-2">
-                    Desired Job Title <span className="text-red-500">*</span>
+                  <label htmlFor="jobTitle" className="block text-sm font-medium text-white/90 mb-2">
+                    Desired Job Title <span className="text-pink-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -166,14 +162,12 @@ export default function InteractiveBuilder() {
                     name="jobTitle"
                     value={formData.jobTitle}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-                      errors.jobTitle ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-                    }`}
+                    className={`glass-input w-full ${errors.jobTitle ? 'border-pink-400/50 focus:ring-pink-500/50' : ''}`}
                     placeholder="e.g., Software Engineer, Product Manager, Data Scientist"
                     disabled={isSubmitting}
                   />
                   {errors.jobTitle && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                    <p className="mt-2 text-sm text-pink-300 flex items-center">
                       <span className="mr-1">⚠️</span>
                       {errors.jobTitle}
                     </p>
@@ -182,26 +176,25 @@ export default function InteractiveBuilder() {
 
                 {/* Experience Level */}
                 <div className="md:col-span-2">
-                  <label htmlFor="experienceLevel" className="block text-sm font-medium text-gray-700 mb-2">
-                    Experience Level <span className="text-red-500">*</span>
+                  <label htmlFor="experienceLevel" className="block text-sm font-medium text-white/90 mb-2">
+                    Experience Level <span className="text-pink-400">*</span>
                   </label>
                   <select
                     id="experienceLevel"
                     name="experienceLevel"
                     value={formData.experienceLevel}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-                      errors.experienceLevel ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-                    }`}
+                    className={`glass-input w-full ${errors.experienceLevel ? 'border-pink-400/50 focus:ring-pink-500/50' : ''}`}
                     disabled={isSubmitting}
+                    style={{ colorScheme: 'dark' }}
                   >
-                    <option value="">Select your experience level</option>
-                    <option value="entry">Entry Level (0-2 years)</option>
-                    <option value="mid">Mid Level (3-5 years)</option>
-                    <option value="senior">Senior Level (6+ years)</option>
+                    <option value="" style={{ backgroundColor: '#1e1b4b', color: '#fff' }}>Select your experience level</option>
+                    <option value="entry" style={{ backgroundColor: '#1e1b4b', color: '#fff' }}>Entry Level (0-2 years)</option>
+                    <option value="mid" style={{ backgroundColor: '#1e1b4b', color: '#fff' }}>Mid Level (3-5 years)</option>
+                    <option value="senior" style={{ backgroundColor: '#1e1b4b', color: '#fff' }}>Senior Level (6+ years)</option>
                   </select>
                   {errors.experienceLevel && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                    <p className="mt-2 text-sm text-pink-300 flex items-center">
                       <span className="mr-1">⚠️</span>
                       {errors.experienceLevel}
                     </p>
@@ -211,17 +204,17 @@ export default function InteractiveBuilder() {
             </div>
 
             {/* Experience Section */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 text-sm">💼</span>
+            <div className="glassmorphism p-8 sm:p-10">
+              <h2 className="text-2xl font-semibold text-white mb-6 flex items-center">
+                <span className="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center mr-3 text-lg">💼</span>
                 Professional Experience
               </h2>
 
               <div className="space-y-6">
                 {/* Past Experience */}
                 <div>
-                  <label htmlFor="pastExperience" className="block text-sm font-medium text-gray-700 mb-2">
-                    Describe Your Experience <span className="text-red-500">*</span>
+                  <label htmlFor="pastExperience" className="block text-sm font-medium text-white/90 mb-2">
+                    Describe Your Experience <span className="text-pink-400">*</span>
                   </label>
                   <textarea
                     id="pastExperience"
@@ -229,22 +222,20 @@ export default function InteractiveBuilder() {
                     value={formData.pastExperience}
                     onChange={handleInputChange}
                     rows={8}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical ${
-                      errors.pastExperience ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-                    }`}
+                    className={`glass-input w-full resize-vertical ${errors.pastExperience ? 'border-pink-400/50 focus:ring-pink-500/50' : ''}`}
                     placeholder="Describe your professional experience, skills, achievements, and responsibilities. Include specific technologies, projects, and results. The more detail you provide, the better your AI-generated resume will be."
                     disabled={isSubmitting}
                   />
                   <div className="flex justify-between items-center mt-2">
                     <div>
                       {errors.pastExperience && (
-                        <p className="text-sm text-red-600 flex items-center">
+                        <p className="text-sm text-pink-300 flex items-center">
                           <span className="mr-1">⚠️</span>
                           {errors.pastExperience}
                         </p>
                       )}
                     </div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-white/60">
                       {formData.pastExperience.length} characters
                     </div>
                   </div>
@@ -252,9 +243,9 @@ export default function InteractiveBuilder() {
 
                 {/* Job Description */}
                 <div>
-                  <label htmlFor="jobDescription" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="jobDescription" className="block text-sm font-medium text-white/90 mb-2">
                     Target Job Description
-                    <span className="text-gray-500 text-xs ml-1">(optional but recommended)</span>
+                    <span className="text-white/60 text-xs ml-1">(optional but recommended)</span>
                   </label>
                   <textarea
                     id="jobDescription"
@@ -262,12 +253,12 @@ export default function InteractiveBuilder() {
                     value={formData.jobDescription}
                     onChange={handleInputChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical"
+                    className="glass-input w-full resize-vertical"
                     placeholder="Paste the job description you're applying for. This helps our AI tailor your resume to match the specific requirements and keywords."
                     disabled={isSubmitting}
                   />
                   <div className="text-right mt-1">
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-white/60">
                       {formData.jobDescription.length} characters
                     </span>
                   </div>
@@ -276,20 +267,20 @@ export default function InteractiveBuilder() {
             </div>
 
             {/* Submit Section */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="glassmorphism p-8 sm:p-10">
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Ready to Generate Your Resume?</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Ready to Generate Your Resume?</h3>
+                <p className="text-white/80 mb-6">
                   Our AI will create a professional resume and cover letter based on your information.
                 </p>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:transform-none disabled:shadow-lg disabled:cursor-not-allowed"
+                  className="gradient-button disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none w-full sm:w-auto"
                 >
                   {isSubmitting ? (
-                    <span className="flex items-center">
+                    <span className="flex items-center justify-center">
                       <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -297,13 +288,13 @@ export default function InteractiveBuilder() {
                       Generating Your Resume...
                     </span>
                   ) : (
-                    <span className="flex items-center">
+                    <span className="flex items-center justify-center">
                       🚀 Generate My Resume
                     </span>
                   )}
                 </button>
 
-                <p className="text-sm text-gray-500 mt-4">
+                <p className="text-sm text-white/60 mt-4">
                   This will take about 10-15 seconds to process your information.
                 </p>
               </div>
@@ -313,9 +304,9 @@ export default function InteractiveBuilder() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">© 2024 AI Resume Builder. Create professional resumes with AI assistance.</p>
+      <footer className="relative px-4 py-8 mt-16 border-t border-white/10">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-white/60">© 2024 AI Resume Builder. Create professional resumes with AI assistance.</p>
         </div>
       </footer>
     </div>

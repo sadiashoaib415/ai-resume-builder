@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata = {
   title: 'AI Resume Builder - Create Professional Resumes with AI',
@@ -8,88 +7,98 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Hero Section */}
-      <section className="px-4 py-20 mx-auto max-w-7xl">
-        <div className="text-center">
-          {/* Hero Image */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=800&fit=crop"
-                alt="Professional Resume Builder"
-                fill
-                className="rounded-full object-cover shadow-2xl"
-                priority
-              />
-            </div>
-          </div>
-          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-            AI-Powered Resume &
-            <span className="text-blue-600"> Cover Letter</span> Builder
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Create professional, ATS-friendly resumes in seconds with AI-driven content generation and modern templates.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/builder"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-200"
-            >
-              🚀 Get Started Free
+    <main className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+      {/* Navigation */}
+      <nav className="relative z-10 px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-white hover:text-purple-300 transition-colors">
+            AI Resume Builder
+          </Link>
+          <div className="flex items-center space-x-6">
+            <Link href="/builder" className="text-white/80 hover:text-white transition-colors">
+              Builder
             </Link>
-            <a
-              href="#features"
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200"
+            <Link
+              href="/builder/interactive"
+              className="gradient-button text-sm py-2 px-6"
             >
-              Learn More ↓
-            </a>
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative px-4 py-20 sm:py-32">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="glassmorphism p-10 sm:p-12 lg:p-16">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Your Resume,
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Supercharged by AI</span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-white/80 mb-10 leading-relaxed">
+              Create professional, ATS-friendly resumes in seconds with AI-driven content generation. Seamlessly integrated, infinitely scalable.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/builder/interactive"
+                className="gradient-button inline-flex items-center justify-center"
+              >
+                Get Started →
+              </Link>
+              <Link
+                href="#features"
+                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center"
+              >
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
-        <div className="px-4 mx-auto max-w-7xl">
+      <section id="features" className="relative px-4 py-20">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Why Choose AI Resume Builder?
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white/80">
               Professional results in minutes, not hours
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="glassmorphism p-8 text-center hover:scale-105 transition-transform duration-200">
               <div className="text-5xl mb-4">🤖</div>
-              <h3 className="text-xl font-semibold mb-2">AI-Powered Content</h3>
-              <p className="text-gray-600">Generate professional resume content and cover letters tailored to your experience</p>
+              <h3 className="text-xl font-semibold mb-3">AI-Powered Content</h3>
+              <p className="text-white/70">Generate professional resume content and cover letters tailored to your experience</p>
             </div>
 
-            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+            <div className="glassmorphism p-8 text-center hover:scale-105 transition-transform duration-200">
               <div className="text-5xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
-              <p className="text-gray-600">Create complete resumes in under 5 minutes with our streamlined process</p>
+              <h3 className="text-xl font-semibold mb-3">Lightning Fast</h3>
+              <p className="text-white/70">Create complete resumes in under 5 minutes with our streamlined process</p>
             </div>
 
-            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+            <div className="glassmorphism p-8 text-center hover:scale-105 transition-transform duration-200">
               <div className="text-5xl mb-4">🎯</div>
-              <h3 className="text-xl font-semibold mb-2">ATS-Optimized</h3>
-              <p className="text-gray-600">Content designed to pass Applicant Tracking Systems and impress recruiters</p>
+              <h3 className="text-xl font-semibold mb-3">ATS-Optimized</h3>
+              <p className="text-white/70">Content designed to pass Applicant Tracking Systems and impress recruiters</p>
             </div>
 
-            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+            <div className="glassmorphism p-8 text-center hover:scale-105 transition-transform duration-200">
               <div className="text-5xl mb-4">💼</div>
-              <h3 className="text-xl font-semibold mb-2">Professional Templates</h3>
-              <p className="text-gray-600">Clean, modern resume formats that stand out to hiring managers</p>
+              <h3 className="text-xl font-semibold mb-3">Professional Templates</h3>
+              <p className="text-white/70">Clean, modern resume formats that stand out to hiring managers</p>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Link
-              href="/builder"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-200"
+              href="/builder/interactive"
+              className="gradient-button inline-flex items-center"
             >
               Start Building Your Resume →
             </Link>
@@ -98,11 +107,11 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="px-4 mx-auto max-w-7xl text-center">
+      <footer className="relative px-4 py-12 border-t border-white/10">
+        <div className="max-w-7xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-4">AI Resume Builder</h3>
-          <p className="text-gray-400 mb-4">Create professional resumes with AI assistance</p>
-          <p className="text-sm text-gray-500">© 2024 AI Resume Builder. Built with Next.js and Tailwind CSS.</p>
+          <p className="text-white/60 mb-4">Create professional resumes with AI assistance</p>
+          <p className="text-sm text-white/40">© 2024 AI Resume Builder. Built with Next.js and Tailwind CSS.</p>
         </div>
       </footer>
     </main>

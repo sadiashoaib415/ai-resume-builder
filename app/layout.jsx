@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
       </head>
-      <body className="antialiased bg-white text-gray-900">
+      <body className="antialiased min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
         {children}
       </body>
     </html>
