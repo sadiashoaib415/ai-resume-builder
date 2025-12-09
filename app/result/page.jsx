@@ -182,12 +182,12 @@ export default function Result() {
                 >
                   🏗️ Build My Resume
                 </Link>
-                <button
-                  onClick={() => window.print()}
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                <Link
+                  href="/builder/interactive"
+                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center"
                 >
-                  🖨️ Print This Sample
-                </button>
+                  🚀 Create Your Own
+                </Link>
               </div>
             </div>
           </div>
