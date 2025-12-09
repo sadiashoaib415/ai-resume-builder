@@ -1,9 +1,4 @@
 {
   "framework": "nextjs",
-  "regions": ["iad1"],
-  "functions": {
-    "app/api/generate/route.js": {
-      "runtime": "nodejs24.x"
-    }
-  }
+  "regions": ["iad1"]
 }
