@@ -9,10 +9,12 @@ A Next.js application for creating AI-powered resumes.
 - Vercel will automatically detect Next.js
 
 ### 2. Environment Variables
-Add this environment variable in Vercel dashboard:
+Add this environment variable in Vercel dashboard (Project Settings → Environment Variables):
 ```
-OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_API_KEY=sk-your-actual-openai-api-key-here
 ```
+
+**Important:** Get your API key from https://platform.openai.com/api-keys
 
 ### 3. Build Settings
 Vercel should automatically detect:
